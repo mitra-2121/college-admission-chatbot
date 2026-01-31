@@ -5,11 +5,15 @@ from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+nltk.download("stopwords")
+
+stop_words = set(stopwords.words("english"))
+
 # Load FAQ data
 faq_df = pd.read_csv("data/faq.csv")
 
 # Text cleaning function
-stop_words = set(stopwords.words("english"))
+#stop_words = set(stopwords.words("english"))
 
 def clean_text(text):
     text = text.lower()
